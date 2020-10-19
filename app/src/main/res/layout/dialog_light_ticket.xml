@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="290dp"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:background="@drawable/write_conner_bg">
+
+
+
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="请用微信扫码，进入公众号，根据指引绑定您的收款账号。"
+        android:textSize="15sp" />
+
+    <Button
+        android:layout_below="@id/tv_message"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/mBtn_commit"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/red_yuanjiao_bg"
+        android:text="确定" />
+</RelativeLayout>

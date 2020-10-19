@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+    <TextView
+            android:id="@+id/iv_worn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text=""
+            android:textColor="@color/md_red400"
+            android:textSize="15sp" />
+
+    <com.Allicnce.taobaoAlliance.common.tick.CountdownView
+            android:id="@+id/cdv_ticktime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            app:isShowDay="true"
+            app:isShowHour="true"
+            app:isShowMillisecond="false"
+            app:isShowMinute="true"
+            app:isShowSecond="true"
+            app:isTimeTextBold="true"
+            app:suffixDay="天"
+            app:suffixGravity="bottom"
+            app:suffixHour="小时"
+            app:suffixMinute="分钟"
+            app:suffixSecond="秒"
+            app:suffixTextColor="@color/colorAccent"
+            app:suffixTextSize="12sp"
+            app:timeTextColor="@color/colorAccent"
+            app:timeTextSize="35sp" />
+
+    <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/bgabanner"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/iv_worn"
+            android:layout_marginTop="5dp"
+            android:elevation="5dp"
+            app:banner_pageChangeDuration="1000"
+            app:banner_pointAutoPlayAble="true"
+            app:banner_pointContainerBackground="@android:color/transparent"
+            app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+            app:banner_pointTopBottomMargin="5dp"
+            app:banner_transitionEffect="alpha" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview1"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/bgabanner"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp" />
+</RelativeLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:paddingTop="10dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_chevron_left_black_24dp"
+            app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="产品设计"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/sponsor"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:background="@null"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="新增"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/add"
+        app:pressedTranslationZ="5dp" />
+
+    <com.Allicnce.taobaoAlliance.common.smartrefresh.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimarylight"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:srlEnableHeaderTranslationContent="true"
+        app:srlEnableLoadmore="true">
+
+        <com.Allicnce.taobaoAlliance.common.smartrefresh.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:srlAccentColor="@color/white"
+            app:srlClassicsSpinnerStyle="Scale"
+            app:srlDrawableMarginRight="20dp"
+            app:srlDrawableProgress="@drawable/loading"
+            app:srlEnableLastTime="true"
+            app:srlFinishDuration="300"
+            app:srlTextSizeTime="5dp"
+            app:srlTextSizeTitle="6sp"
+            app:srlTextTimeMarginTop="2dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimarylight"
+            tools:listitem="@android:layout/simple_list_item_2" />
+
+        <com.Allicnce.taobaoAlliance.common.smartrefresh.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimarylight"
+            app:srlAccentColor="@color/white" />
+    </com.Allicnce.taobaoAlliance.common.smartrefresh.SmartRefreshLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

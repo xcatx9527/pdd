@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--y用于android N 以上版本app安装-->
+<paths>
+    <external-path
+        name="files_root"
+        path="/storage/emulated/0/aaa" />
+    <external-path
+        name="external_storage_root"
+        path="." />
+</paths>

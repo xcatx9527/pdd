@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    tools:context="com.Allicnce.taobaoAlliance.activity.WeiXinBindActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="250dp"
+        android:layout_height="280dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp">
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/weixin_bg" />
+
+        <ImageView
+            android:id="@+id/iv_erweima"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:scaleType="fitXY" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fl_container"
+        android:layout_centerHorizontal="true"
+        android:text="1.微信添加客服馨月为好友,微信号:bean00009\n2.发送我要试玩,等待馨月回复您邀请码\n3.输入邀请码"
+        android:textColor="@color/main_color"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/et_code"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/edittext_bg"
+        android:gravity="center"
+        android:hint="请输入邀请码"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/bt_bind"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="绑定"
+        android:textColor="@color/white" />
+</RelativeLayout>

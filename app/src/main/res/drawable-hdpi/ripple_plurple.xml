@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/md_deeporange700"><!--设置水波的颜色-->
+    <item android:drawable="@color/md_deeporange400"/><!--添加背景颜色可以是任何drawable-->
+    <item android:id="@android:id/mask" android:drawable="@android:color/white" /><!--设置遮挡，使ripple和view一样大，如果不设置，添加的view会变成圆形-->
+</ripple>

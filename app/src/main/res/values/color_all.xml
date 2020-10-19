@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="md_red400">#ffef5350</color>
+    <color name="md_red500">#fff44336</color>
+    <color name="md_red600">#ffe53935</color>
+
+    <color name="md_blue400">#ff42a5f5</color>
+    <color name="md_blue600">#ff1e88e5</color>
+
+    <color name="md_cyan100">#b2ebf2</color>
+    <color name="md_cyanA200">#ff18ffff</color>
+
+    <color name="md_teal300">#ff4db6ac</color>
+
+    <color name="md_green400">#ff66bb6a</color>
+    <color name="md_green600">#ff43a047</color>
+
+    <color name="md_amber900">#ffff6f00</color>
+
+    <color name="md_orange100">#ffffe0b2</color>
+    <color name="md_orange400">#ffffa726</color>
+
+    <color name="md_deeporange400">#ffff7043</color>
+    <color name="md_deeporange700">#ffe64a19</color>
+
+    <color name="md_grey200">#ffeeeeee</color>
+    <color name="md_grey300">#ffe0e0e0</color>
+    <color name="md_grey400">#ffbdbdbd</color>
+    <color name="md_grey500">#ff9e9e9e</color>
+    <color name="md_grey600">#ff757575</color>
+
+</resources>

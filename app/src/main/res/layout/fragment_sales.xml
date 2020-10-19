@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.Allicnce.taobaoAlliance.common.smartrefresh.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            app:srlEnableHeaderTranslationContent="true"
+            app:srlEnableLoadmore="true">
+
+        <com.Allicnce.taobaoAlliance.common.smartrefresh.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                app:srlAccentColor="@color/white"
+                app:srlClassicsSpinnerStyle="Scale"
+                app:srlDrawableMarginRight="20dp"
+                app:srlDrawableProgress="@drawable/loading"
+                app:srlEnableLastTime="true"
+                app:srlFinishDuration="300"
+                app:srlTextSizeTime="5dp"
+                app:srlTextSizeTitle="6sp"
+                app:srlTextTimeMarginTop="2dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                tools:listitem="@android:layout/simple_list_item_2" />
+
+        <com.Allicnce.taobaoAlliance.common.smartrefresh.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimary"
+                app:srlAccentColor="@color/white" />
+    </com.Allicnce.taobaoAlliance.common.smartrefresh.SmartRefreshLayout>
+
+
+</LinearLayout>

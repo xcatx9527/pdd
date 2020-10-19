@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/transparent"
+    android:layout_width="280dp"
+    android:layout_height="180dp">
+
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_marginTop="65dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:id="@+id/tv_message"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="您确定要把小红包下架您确定要把小红包下架?"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/mBtn_Cancel"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:background="@drawable/red_yuanjiao_bg"
+                android:text="取消" />
+
+            <Button
+                android:id="@+id/mBtn_commit"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/red_yuanjiao_bg"
+                android:text="确定" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

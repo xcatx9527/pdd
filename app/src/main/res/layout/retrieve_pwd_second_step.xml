@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+            android:id="@+id/iv_headpic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_bg" />
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_headpic"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:id="@+id/passlayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+            <ImageView
+                    android:id="@+id/passicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/secort_icon" />
+
+            <EditText
+                    android:id="@+id/pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/passicon"
+                    android:background="@null"
+                    android:hint="输入新密码"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColor="@color/main_text"
+                    android:textColorHint="@color/main_gary"
+                    android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+        <RelativeLayout
+                android:id="@+id/makesuerpasslayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+            <ImageView
+                    android:id="@+id/makesurepassicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/secort_icon" />
+
+            <EditText
+                    android:id="@+id/makesurepass"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/makesurepassicon"
+                    android:background="@null"
+                    android:hint="确认新密码"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColor="@color/main_text"
+                    android:textColorHint="@color/main_gary"
+                    android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <Button
+                android:id="@+id/finish"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/login_button_bg"
+                android:text="完成"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+    </LinearLayout>
+</RelativeLayout>

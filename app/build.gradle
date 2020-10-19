@@ -1,0 +1,139 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        signature {
+            keyAlias 'taobao'
+            keyPassword 'chenyang'
+            storeFile file('../signature.keystore')
+            storePassword 'chenyang'
+        }
+    }
+    compileSdkVersion 28
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+    }
+    defaultConfig {
+        applicationId "com.Allicnce.taobaoAlliance"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0.7"
+        vectorDrawables.useSupportLibrary = true
+        renderscriptTargetApi 28
+        renderscriptSupportModeEnabled true    // Enable RS support
+        multiDexEnabled true
+        signingConfig signingConfigs.signature
+        android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        //不添加线上版本编译报错
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    buildTypes {
+        ceshi {
+            manifestPlaceholders = [app_name: "淘宝联盟", app_icon: "luncher_ceshi"]
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            buildConfigField "String", "SERVER_HOST", "\"http://xlyqq.xilexuan.com/scriptmanager/\""
+            shrinkResources false
+            zipAlignEnabled true
+            pseudoLocalesEnabled true
+            signingConfig signingConfigs.signature
+            debuggable true
+            ext.alwaysUpdateBuildId = false//编译速度优化
+        }
+        debug {
+            minifyEnabled false
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            applicationIdSuffix ".debug"
+            manifestPlaceholders = [app_name: "淘宝联盟", app_icon: "luncher"]
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            buildConfigField "String", "SERVER_HOST", "\"http://xlyqq.xilexuan.com/scriptmanager/\""
+            shrinkResources false
+            zipAlignEnabled true
+            pseudoLocalesEnabled true
+            signingConfig signingConfigs.signature
+            ext.alwaysUpdateBuildId = false//编译速度优化
+        }
+        release {
+            manifestPlaceholders = [app_name: "任务app", app_icon: "launcher"]
+            buildConfigField "String", "SERVER_HOST", "\"http://xlyqq.xilexuan.com/scriptmanager/\""
+            signingConfig signingConfigs.signature
+            //混淆
+            minifyEnabled true
+            //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+    buildToolsVersion '28.0.3'
+
+}
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd-HH-mm", TimeZone.getTimeZone("Asia/Shanghai"))
+}
+
+android.applicationVariants.all { variant ->
+    variant.outputs.all {
+        outputFileName = variant.baseName + "_" + variant.versionName + "_" + releaseTime() + ".apk";
+    }
+}
+//指定arr文件路径
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation("com.google.android.material:material:1.2.1")
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //图片选取
+    implementation 'com.lzy.widget:imagepicker:0.5.5'
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
+    //打印日志
+    implementation 'com.orhanobut:logger:2.2.0'
+    //view注解
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    //显示图片框架
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+    //二维码
+    implementation 'com.google.zxing:core:3.3.0'
+    //okhttp
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.lzy.net:okserver:2.0.5'
+    //json解析
+    implementation 'com.google.code.gson:gson:2.8.0'
+    //banner
+    implementation 'cn.bingoogolapple:bga-banner:2.1.7@aar'
+    implementation 'com.jaredrummler:material-spinner:1.1.0'
+    //磨砂效果
+    implementation 'com.github.mmin18:realtimeblurview:1.0.6'
+    //最新版本
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
+    //进程间通讯
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.zhy:autolayout:1.4.5'
+}
