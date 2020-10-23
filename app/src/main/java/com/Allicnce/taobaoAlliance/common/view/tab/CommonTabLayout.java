@@ -27,6 +27,7 @@ import com.Allicnce.taobaoAlliance.common.view.tab.listener.OnTabSelectListener;
 import com.Allicnce.taobaoAlliance.common.view.tab.utils.FragmentChangeManager;
 import com.Allicnce.taobaoAlliance.common.view.tab.utils.UnreadMsgUtils;
 import com.Allicnce.taobaoAlliance.common.view.tab.widget.MsgView;
+import com.Allicnce.taobaoAlliance.utils.EmptyUtils;
 
 import java.util.ArrayList;
 
@@ -251,23 +252,24 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
      */
     private void addTab(final int position, View tabView) {
         TextView tv_tab_title = (TextView) tabView.findViewById(R.id.tv_tab_title);
-        tv_tab_title.setText(mTabEntitys.get(position).getTabTitle());
+        if (EmptyUtils.notEmpty(mTabEntitys.get(position).getTabTitle())) {
+            tv_tab_title.setText(mTabEntitys.get(position).getTabTitle());
+        } else {
+            tv_tab_title.setVisibility(GONE);
+        }
         ImageView iv_tab_icon = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
         iv_tab_icon.setImageResource(mTabEntitys.get(position).getTabUnselectedIcon());
 
-        tabView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int position = (Integer) v.getTag();
-                if (mCurrentTab != position) {
-                    setCurrentTab(position);
-                    if (mListener != null) {
-                        mListener.onTabSelect(position);
-                    }
-                } else {
-                    if (mListener != null) {
-                        mListener.onTabReselect(position);
-                    }
+        tabView.setOnClickListener(v -> {
+            int position1 = (Integer) v.getTag();
+            if (mCurrentTab != position1) {
+                setCurrentTab(position1);
+                if (mListener != null) {
+                    mListener.onTabSelect(position1);
+                }
+            } else {
+                if (mListener != null) {
+                    mListener.onTabReselect(position1);
                 }
             }
         });

@@ -67,7 +67,7 @@ public class HomeFragment extends BaseListFragment<TopListModel.GameListEntity> 
         orderAdapter = initDates(rvList, null, R.layout.item_message, datas, false);
         View view = getActivityContext().getLayoutInflater().inflate(R.layout.header_home, null);
         TextView iv_worn = (TextView) view.findViewById(R.id.iv_worn);
-        iv_worn.setText(new SpannableStringUtils.Builder().append("公告\n").setFontSize(18, true)
+        iv_worn.setText(new SpannableStringUtils.Builder().append("公告\n").setFontSize(18, true).setBold()
                 .append("请所有用户务必看完任务帮助后再进行发布任务或接任务操作!账号'XXX',因不按规定操作已经被系统永久封号!请大家珍惜自己的账号").create());
         recyclerview1 = (RecyclerView) view.findViewById(R.id.recyclerview1);
         CountdownView mCvCountdownView = (CountdownView) view.findViewById(R.id.cdv_ticktime);

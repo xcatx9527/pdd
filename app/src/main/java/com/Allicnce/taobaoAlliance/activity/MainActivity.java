@@ -115,7 +115,7 @@ public class MainActivity extends BaseActivity {
         mFragments.add(new OptionsFragment());
         mFragments.add(new MineFragment());
         for (int i = 0; i < mTitles.length; i++) {
-            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
+            mTabEntities.add(new TabEntity( mIconSelectIds[i], mIconUnselectIds[i]));
         }
 
         tl_2();
