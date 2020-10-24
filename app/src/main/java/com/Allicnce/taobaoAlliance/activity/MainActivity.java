@@ -17,8 +17,8 @@ import com.Allicnce.taobaoAlliance.common.view.tab.CommonTabLayout;
 import com.Allicnce.taobaoAlliance.common.view.tab.listener.CustomTabEntity;
 import com.Allicnce.taobaoAlliance.common.view.tab.listener.OnTabSelectListener;
 import com.Allicnce.taobaoAlliance.fragment.HomeFragment;
-import com.Allicnce.taobaoAlliance.fragment.MineFragment;
 import com.Allicnce.taobaoAlliance.fragment.OptionsFragment;
+import com.Allicnce.taobaoAlliance.fragment.PersionFragment;
 import com.Allicnce.taobaoAlliance.model.TabEntity;
 
 import java.util.ArrayList;
@@ -113,7 +113,7 @@ public class MainActivity extends BaseActivity {
         mFragments.add(new HomeFragment());
         mFragments.add(new MissionTabFragment());
         mFragments.add(new OptionsFragment());
-        mFragments.add(new MineFragment());
+        mFragments.add(new PersionFragment());
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity( mIconSelectIds[i], mIconUnselectIds[i]));
         }

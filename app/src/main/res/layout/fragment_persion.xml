@@ -114,13 +114,13 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
-    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="20dp"
             android:src="@android:drawable/ic_dialog_email"
-            app:layout_behavior="com.vizhuo.caiyingyezhu.utils.behavior.ScrollingFabBehavior" />-->
+           />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
