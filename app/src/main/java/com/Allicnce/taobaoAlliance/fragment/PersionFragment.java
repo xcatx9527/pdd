@@ -34,7 +34,7 @@ public class PersionFragment extends BaseFragment {
     AppBarLayout appBarLayout;
     @Bind(R.id.main_content)
     CoordinatorLayout mainContent;
-    @Bind(R.id.fab1)
+    @Bind(R.id.fab)
     FloatingActionButton floatingActionButton;
     private String[] mTitles = {"图表", "任务"};
     private ArrayList<Fragment> mFragments = new ArrayList<>();
@@ -63,7 +63,7 @@ public class PersionFragment extends BaseFragment {
     @Override
     public void onChildClick(View v) {
         switch (v.getId()) {
-            case R.id.fab1:
+            case R.id.fab:
                 ThreadLocal<Map<String, Constructor<CoordinatorLayout.Behavior>>> local = (ThreadLocal<Map<String, Constructor<CoordinatorLayout.Behavior>>>) ReflexUtil.getField(mainContent.getClass(), "sConstructors");
                 Map<String, Constructor<CoordinatorLayout.Behavior>> map = local.get();
                 SampleHeaderBehavior sampleHeaderBehavior = new SampleHeaderBehavior();

@@ -8,16 +8,14 @@ import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
-import com.Allicnce.taobaoAlliance.common.smartrefresh.SmartRefreshLayout;
 import com.chenyang.lloglib.LLog;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * @author chenyang08
  * @date 2020/10/23
  * @Description:
  */
-public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<FloatingActionButton> {
+public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<View> {
 
     // 界面整体向上滑动，达到列表可滑动的临界点
     private boolean upReach;
@@ -34,12 +32,12 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<FloatingAct
     }
 
     @Override
-    public boolean layoutDependsOn(CoordinatorLayout parent, FloatingActionButton child, View dependency) {
+    public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
         return dependency instanceof RecyclerView;
     }
 
     @Override
-    public boolean onInterceptTouchEvent(CoordinatorLayout parent, FloatingActionButton child, MotionEvent ev) {
+    public boolean onInterceptTouchEvent(CoordinatorLayout parent, View child, MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 downReach = false;
@@ -50,14 +48,14 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<FloatingAct
     }
 
     @Override
-    public boolean onStartNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull FloatingActionButton child, @NonNull View directTargetChild, @NonNull View target, int axes, int type) {
+    public boolean onStartNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View directTargetChild, @NonNull View target, int axes, int type) {
         return (axes & ViewCompat.SCROLL_AXIS_VERTICAL) != 0;
     }
 
     @Override
-    public void onNestedPreScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull FloatingActionButton child, @NonNull View target, int dx, int dy, @NonNull int[] consumed, int type) {
+    public void onNestedPreScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull View child, @NonNull View target, int dx, int dy, @NonNull int[] consumed, int type) {
         super.onNestedPreScroll(coordinatorLayout, child, target, dx, dy, consumed, type);
-        if (target instanceof SmartRefreshLayout) {
+        if (true) {
            /* RecyclerView list = (RecyclerView) target;
             // 列表第一个全部可见Item的位置
             int pos = ((LinearLayoutManager) list.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
@@ -67,10 +65,10 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<FloatingAct
             // 整体可以滑动，否则RecyclerView消费滑动事件
             LLog.e("onNestedPreScroll---" + child.getTranslationY() + " dx:" + dx + "dy:" + dy);
             if (dy > 0) {
-                if (child.getTranslationY() + dy < 200) {
+                if (child.getTranslationY() + dy < 400) {
                     child.setTranslationY(child.getTranslationY() + dy);
                 } else {
-                    child.setTranslationY(200);
+                    child.setTranslationY(400);
                 }
             } else {
                 if (child.getTranslationY() + dy > 0) {
@@ -97,7 +95,7 @@ public class SampleHeaderBehavior extends CoordinatorLayout.Behavior<FloatingAct
 
     @Override
     public void onNestedScroll(@NonNull CoordinatorLayout
-                                       coordinatorLayout, @NonNull FloatingActionButton child, @NonNull View target, int dxConsumed,
+                                       coordinatorLayout, @NonNull View child, @NonNull View target, int dxConsumed,
                                int dyConsumed, int dxUnconsumed, int dyUnconsumed, int type, @NonNull int[] consumed) {
         LLog.e("onNestedScroll" + target.getClass() + "dx:" + dxConsumed + "dy:" + dyConsumed + " dxUnconsumed:" + dxUnconsumed + "dyUnconsumed:" + dyUnconsumed);
         super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed, type, consumed);
